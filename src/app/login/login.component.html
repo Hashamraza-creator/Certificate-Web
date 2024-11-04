@@ -1,0 +1,28 @@
+<form [formGroup]="loginForm">
+    <div class="myform">
+        <h2>Log in</h2>
+        <p>Need an account? <a routerLink="/signup">Create an account</a></p>
+
+        <label for="username">Username or Email</label>
+        <input type="text" id="username" placeholder="Enter your username or email" formControlName="username" />
+
+        <label for="password">Password</label>
+        <div class="password-field">
+            <input type="password" id="password" placeholder="Enter your password" formControlName="password" />
+            <span class="password-toggle" onclick="togglePasswordVisibility()">👁️</span>
+        </div>
+
+        <div class="keep-logged-in">
+            <input type="checkbox" id="keep-logged-in" formControlName="keepLoggedIn" />
+            <label for="keep-logged-in">Keep me logged in</label>
+        </div>
+
+        <button type="submit">Log in</button>
+
+        <div class="signup-option">
+            <a routerLink="/forgot-username">Forgot username?</a> |
+            <a routerLink="/forgot-password">Forgot password?</a> |
+            <a routerLink="/help">Can't log in?</a>
+        </div>
+    </div>
+</form>

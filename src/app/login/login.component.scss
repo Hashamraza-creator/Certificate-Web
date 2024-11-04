@@ -1,0 +1,115 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0097B2, #004f58);// Background color
+
+  .myform {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 400px; // Form width
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left; // Align text to the left
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #24292e;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: #24292e;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #495057;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #00b4d8; // Color for focused border
+        outline: none;
+      }
+    }
+
+    .password-field {
+      position: relative;
+
+      .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #00b4d8; // Toggle icon color
+        font-size: 1.2rem;
+      }
+    }
+
+    .keep-logged-in {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      input[type="checkbox"] {
+        margin-right: 0.5rem;
+        accent-color: #00b4d8; // Checkbox color
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: #24292e;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      color: #ffffff;
+      background-color: #00b4d8; // Button background color
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0077b6; // Button hover color
+      }
+    }
+
+    .signup-option {
+      margin-top: 1rem;
+      text-align: center;
+
+      a {
+        font-size: 0.9rem;
+        color: #00b4d8;
+        text-decoration: none;
+        margin: 0 0.5rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
