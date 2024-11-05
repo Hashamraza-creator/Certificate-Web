@@ -1,14 +1,22 @@
-.manage-certificates-container {
+.view-certificates-container {
   margin: 20px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
+a {
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 button {
   margin-left: 5px;
   padding: 5px;
-  background-color: #28a745;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 3px;
@@ -16,9 +24,5 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
-}
-
-ul {
-  list-style-type: none;
+  background-color: #0056b3;
 }

@@ -1,1 +1,18 @@
-<p>certificate-list works!</p>
+<div class="template-container">
+  <h2>Add Certificate Template</h2>
+  <input [(ngModel)]="newTemplate.title" placeholder="Template Title" />
+  <input [(ngModel)]="newTemplate.fields" placeholder="Editable Fields (comma separated)" />
+  <input type="file" (change)="onFileChange($event)" accept=".pdf,.jpg,.png" />
+  <button (click)="addTemplate()">Add Template</button>
+
+  <div class="templates-list">
+    <h3>Templates</h3>
+    <ul>
+      <li *ngFor="let template of templates">
+        {{ template.title }} - Editable Fields: {{ template.fields.join(', ') }}
+        <br />
+        <img *ngIf="template.file" [src]="template.file" alt="Template Preview" class="template-preview" />
+      </li>
+    </ul>
+  </div>
+</div>

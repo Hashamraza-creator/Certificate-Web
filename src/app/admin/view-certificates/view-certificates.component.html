@@ -1,0 +1,11 @@
+<div class="view-certificates-container">
+  <h2>View Certificates</h2>
+  <ul>
+    <li *ngFor="let certificate of certificates">
+      {{ certificate.title }} -
+      <a [href]="certificate.link" target="_blank">View Certificate</a> |
+      <button (click)="downloadCertificate(certificate.link)">Download</button> |
+      QR Code: {{ certificate.qrCode }}
+    </li>
+  </ul>
+</div>

@@ -1,1 +1,11 @@
-<p>template-management works!</p>
+<div class="manage-certificates-container">
+  <h2>Manage Certificates</h2>
+  <ul>
+    <li *ngFor="let certificate of certificates">
+      {{ certificate.title }} - Status: {{ certificate.status }} - Employee: {{ certificate.employee }}
+      <button (click)="approveCertificate(certificate.id)">Approve</button>
+      <button (click)="rejectCertificate(certificate.id)">Reject</button>
+      <button (click)="customizeCertificate(certificate.id)">Customize</button>
+    </li>
+  </ul>
+</div>
