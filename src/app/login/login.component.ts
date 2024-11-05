@@ -11,7 +11,15 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class LoginComponent {
   loginForm = new FormGroup({
-    name: new FormControl(''),
-    password: new FormControl('')
+    username: new FormControl(''),
+    password: new FormControl(''),
+    keepLoggedIn: new FormControl(false)
   })
+
+  passType = 'password';
+
+  changeVisibility() {
+    this.passType = this.passType === 'password' ? 'text': 'password';
+    console.log(this.passType)
+  }
 }

@@ -5,20 +5,30 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, RouterLink, RouterLinkActive],
+  imports: [FormsModule, ReactiveFormsModule, RouterLink, RouterLinkActive],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  signup = new FormGroup({
+  signupForm = new FormGroup({
     username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl(''),
-    keepLoggedIn: new FormControl(false)
+    confirmPassword: new FormControl(''),
+    agreeToTerms: new FormControl(false)
   });
 
-  showPassword = false;
+  passType = 'password';
 
-  togglePasswordVisibility(): void {
-    this.showPassword = !this.showPassword;
+  changeVisibility() {
+    this.passType = this.passType === 'password' ? 'text' : 'password';
+  }
+
+  onSubmit() {
+    if (this.signupForm.valid) {
+      console.log('Signup successful!', this.signupForm.value);
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }

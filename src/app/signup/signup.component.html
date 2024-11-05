@@ -1,28 +1,31 @@
-<form [formGroup]="signup">
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="myform">
-        <h2>Log in</h2>
-        <p>Need an account? <a routerLink="/login">Create an account</a></p>
-
-        <label for="username">Username or Email</label>
-        <input type="text" id="username" placeholder="Enter your username or email" formControlName="username" />
-
-        <label for="password">Password</label>
-        <div class="password-field">
-            <input type="password" id="password" placeholder="Enter your password" formControlName="password" />
-            <span class="password-toggle" onclick="togglePasswordVisibility()">👁️</span>
-        </div>
-
-        <div class="keep-logged-in">
-            <input type="checkbox" id="keep-logged-in" formControlName="keepLoggedIn" />
-            <label for="keep-logged-in">Keep me logged in</label>
-        </div>
-
-        <button type="submit">Log in</button>
-
-        <div class="signup-option">
-            <a routerLink="/forgot-username">Forgot username?</a> |
-            <a routerLink="/forgot-password">Forgot password?</a> |
-            <a routerLink="/help">Can't log in?</a>
-        </div>
+      <h2>Sign Up</h2>
+      <p>Already have an account? <a routerLink="/login">Log in</a></p>
+  
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username" formControlName="username" />
+  
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" formControlName="email" />
+  
+      <label for="password">Password</label>
+      <div class="password-field">
+        <input [type]="passType" id="password" placeholder="Enter your password" formControlName="password" />
+        <span class="password-toggle" (click)="changeVisibility()">{{ passType === 'password' ? '👁️' : '🙈' }}</span>
+      </div>
+  
+      <label for="confirmPassword">Confirm Password</label>
+      <div class="password-field">
+        <input [type]="passType" id="confirmPassword" placeholder="Confirm your password" formControlName="confirmPassword" />
+      </div>
+  
+      <div class="agree-terms">
+        <input type="checkbox" id="agree-terms" formControlName="agreeToTerms" />
+        <label for="agree-terms">I agree to the <a routerLink="/login">terms and conditions</a></label>
+      </div>
+  
+      <button type="submit">Sign Up</button>
     </div>
-</form>
+  </form>
+  
