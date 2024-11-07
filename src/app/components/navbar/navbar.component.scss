@@ -1,0 +1,59 @@
+// Color Palette
+$black: #000000;
+$white: #FFFFFF;
+$teal: #0097B2;
+$light-teal: #00B3C6;
+$gray: #B7B7B7;
+
+
+
+// Toolbar Styles
+mat-toolbar.container {
+    
+  background-color: $teal;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 170px;
+  color: $white;
+  font-size: 18px;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.login-signout-button {
+  width: 100px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.logout {
+    background-color: $gray;
+    
+    &:hover {
+      background-color: darken($gray, 10%);
+    }
+  }
+}
+
+.example-spacer {
+  flex: 1;
+}

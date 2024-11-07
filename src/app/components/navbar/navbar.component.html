@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="container">
+    <span><a mat-icon-button routerLink="/" class="logo">Quantabytes</a></span>
+    <span class="example-spacer"></span>
+    @if (!loginService.isLoggedIn) {
+      <a mat-icon-button routerLink="/login" class="login-signout-button">Login</a>
+    } @else {
+      <a mat-icon-button routerLink="/" class="login-signout-button">Logout</a>
+    }
+</mat-toolbar>
